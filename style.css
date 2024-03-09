@@ -1,4 +1,3 @@
-/* Adicione estilos para o conteúdo geral */
 .conteudo {
     position: absolute;
     top: 50%;
@@ -9,7 +8,6 @@
     align-items: center;
 }
 
-/* Estilize a seta à esquerda e à direita */
 .custom-prev-arrow,
 .custom-next-arrow {
     position: absolute;
@@ -26,36 +24,32 @@
     right: 10px;
 }
 
-/* Estilos para o container dos cards e carrossel */
 #container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Ajuste conforme necessário */
+    margin-top: 20px; 
 }
 
-/* Estilos para cada card */
+
 .card {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 200px; /* Largura fixa para todos os cards */
+    width: 200px; 
     text-align: center;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
-    margin: 0 10px; /* Adiciona espaçamento entre os cards, ajuste conforme necessário */
+    box-sizing: border-box; 
+    margin: 0 10px;
 }
 
-/* Estilos para a imagem dentro do card */
 .card img {
    
     border-radius: 8px;
-    display: block; /* Isso remove qualquer espaço extra abaixo da imagem */
-    margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
+    display: block; 
+    margin: 0 auto; 
 }
 
-/* Estilos para o carrossel */
 .slider {
     width: 100%;
-    max-width: 800px; /* Defina a largura máxima do carrossel conforme necessário */
-}
+    max-width: 800px; }
 
 
 .card div{
