@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <!-- Adicione os arquivos Slick Carousel -->
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+ </head>
 <body>
+    <div class="conteudo">
+        <div id="container" class="slider">
+            <!-- As divs dos personagens serão preenchidas dinamicamente aqui -->
+        </div>
 
-    <div id="container">
-        <!-- As divs dos personagens serão preenchidas dinamicamente aqui -->
+        <!-- Setas personalizadas -->
+        <div class="custom-prev-arrow">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="custom-next-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

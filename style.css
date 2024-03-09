@@ -1,26 +1,44 @@
+/* Adicione estilos para o conteúdo geral */
+.conteudo {
+    position: relative;
+}
+
+/* Estilize a seta à esquerda */
+.custom-prev-arrow {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Estilize a seta à direita */
+.custom-next-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
 /* Estilos para o container dos cards */
-#container{
+#container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espaço entre os cards */
+    justify-content: center;
 }
 
 /* Estilos para cada card */
 .card {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 200px; /* Largura do card */
+    width: 200px; /* Largura fixa para todos os cards */
     text-align: center;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
 }
 
 /* Estilos para a imagem dentro do card */
 .card img {
-    max-width: 100%;
+    width: 100%; /* A imagem ocupa 100% da largura do seu contêiner */
     height: auto;
-    border-radius: 8px; /* Borda arredondada para a imagem */
-}
-
-/* Estilos para o nome e ocupação dentro do card */
-.card div {
-    margin-top: 10px;
+    border-radius: 8px;
 }

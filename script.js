@@ -1,36 +1,40 @@
-let requesty = new XMLHttpRequest();
-requesty.open("GET", "https://bobsburgers-api.herokuapp.com/characters/?limit=9&skip=265");
-requesty.send();
+document.addEventListener('DOMContentLoaded', function () {
+  let requesty = new XMLHttpRequest();
+  requesty.open("GET", "https://bobsburgers-api.herokuapp.com/characters/?limit=9&skip=265");
+  requesty.send();
 
-requesty.onload = function () {
-    let personagens = JSON.parse(requesty.response); // array de personagens
+  requesty.onload = function () {
+      let personagens = JSON.parse(requesty.response);
+      const container = document.getElementById("container");
 
-    const container = document.getElementById("container"); // Container para os cards
+      for (let i = 0; i < personagens.length; i++) {
+          const personagem = personagens[i];
+          const card = document.createElement("div");
+          card.classList.add("card");
+          const imgElement = document.createElement("img");
 
-    // Percorrer todos os personagens e criar um card para cada um
-    for (let i = 0; i < personagens.length; i++) {
-        const personagem = personagens[i];
+          // Adicione um estilo diretamente à imagem para definir o tamanho
+          imgElement.style.width = "100%";
+          imgElement.style.height = "auto";
 
-        // Criar um card para o personagem
-        const card = document.createElement("div");
-        card.classList.add("card"); // Adicionar uma classe para estilização CSS (pode ajustar conforme necessário)
+          imgElement.src = personagem.image;
+          card.appendChild(imgElement);
+          const nomeElement = document.createElement("div");
+          nomeElement.innerText = personagem.name;
+          card.appendChild(nomeElement);
+          const occupationElement = document.createElement("div");
+          occupationElement.innerText = personagem.occupation;
+          card.appendChild(occupationElement);
+          container.appendChild(card);
+      }
 
-        // Criar elemento de imagem e adicionar ao card
-        const imgElement = document.createElement("img");
-        imgElement.src = personagem.image;
-        card.appendChild(imgElement);
-
-        // Criar elemento para o nome e adicionar ao card
-        const nomeElement = document.createElement("div");
-        nomeElement.innerText = personagem.name;
-        card.appendChild(nomeElement);
-
-        // Criar elemento para a ocupação e adicionar ao card
-        const occupationElement = document.createElement("div");
-        occupationElement.innerText = personagem.occupation;
-        card.appendChild(occupationElement);
-
-        // Adicionar o card ao container
-        container.appendChild(card);
-    }
-}
+      $('.slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          prevArrow: $('.custom-prev-arrow'),
+          nextArrow: $('.custom-next-arrow'),
+      });
+  }
+});
