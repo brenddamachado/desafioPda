@@ -11,27 +11,31 @@ document.addEventListener('DOMContentLoaded', function () {
           const personagem = personagens[i];
           const card = document.createElement("div");
           card.classList.add("card");
-          const imgElement = document.createElement("img");
 
-          // Defina a largura e altura desejadas para as imagens (120x200)
+          // Adiciona a imagem do personagem
+          const imgElement = document.createElement("img");
           imgElement.width = 120;
           imgElement.height = 200;
-
           imgElement.src = personagem.image;
           card.appendChild(imgElement);
+
+          // Adiciona o nome do personagem
           const nomeElement = document.createElement("div");
-          nomeElement.innerText = personagem.name;
+          nomeElement.innerText = "Nome: " + personagem.name;
           card.appendChild(nomeElement);
-          const occupationElement = document.createElement("div");
-          occupationElement.innerText = personagem.occupation;
-          card.appendChild(occupationElement);
+
+          // Adiciona o nome do primeiro episódio
+          const firstEpisodeElement = document.createElement("div");
+          firstEpisodeElement.innerText = "Primeiro Episódio: " + personagem.firstEpisode;
+          card.appendChild(firstEpisodeElement);
+
           container.appendChild(card);
       }
 
       $('.slider').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
-          autoplay: false, // Desativa a rotação automática
+          autoplay: false,
           prevArrow: $('.custom-prev-arrow'),
           nextArrow: $('.custom-next-arrow'),
       });
