@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
           card.classList.add("card");
           const imgElement = document.createElement("img");
 
-          // Adicione um estilo diretamente à imagem para definir o tamanho
-          imgElement.style.width = "100%";
-          imgElement.style.height = "auto";
+          // Defina a largura e altura desejadas para as imagens (120x200)
+          imgElement.width = 120;
+          imgElement.height = 200;
 
           imgElement.src = personagem.image;
           card.appendChild(imgElement);
@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $('.slider').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2000,
+          autoplay: false, // Desativa a rotação automática
           prevArrow: $('.custom-prev-arrow'),
           nextArrow: $('.custom-next-arrow'),
       });
